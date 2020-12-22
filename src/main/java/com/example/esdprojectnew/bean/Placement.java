@@ -21,6 +21,7 @@ public class Placement implements Serializable {
 
     private Integer intake;
 
+    @Column(nullable = false, columnDefinition="Decimal(2,1) default '0.0'")
     private Double min_grade;
 
     public Placement(Integer org_id, String organization, String profile, String description, Integer intake, Double min_grade) {

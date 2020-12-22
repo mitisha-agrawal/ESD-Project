@@ -31,9 +31,9 @@ public class PlacementController
     @Produces(MediaType.APPLICATION_JSON)
     public Response getOrganizations() {
         List<Placement> orgs = placementService.getOrganizations();
-        for( Placement i : orgs ) {
+        /*for( Placement i : orgs ) {
             System.out.println(i);
-        }
+        }*/
         return Response.ok().entity(orgs).build();
     }
 }

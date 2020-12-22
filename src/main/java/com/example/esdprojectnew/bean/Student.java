@@ -20,23 +20,27 @@ public class Student implements Serializable {
     @Column(nullable = false, unique = true)
     private String email;
 
-    private String specialization;
+    @Column(nullable = false,columnDefinition="Decimal(2,1) default '0.0'")
+    private Double cgpa;
+
+    private Integer grad_year;
 
     @Column(nullable = false)
     private String domain;
 
+    @Column(nullable = false)
+    private String specialization;
 
-    private Integer placement_id;
-
-    public Student(Integer id, String roll_number, String first_name, String last_name, String email, String specialization, String domain, Integer placement_id) {
+    public Student(Integer id, String roll_number, String first_name, String last_name, String email, Double cgpa, Integer grad_year, String domain, String specialization) {
         this.id = id;
         this.roll_number = roll_number;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
-        this.specialization = specialization;
+        this.cgpa = cgpa;
+        this.grad_year = grad_year;
         this.domain = domain;
-        this.placement_id = placement_id;
+        this.specialization = specialization;
     }
 
     public Student() {
@@ -99,11 +103,22 @@ public class Student implements Serializable {
         this.domain = domain;
     }
 
-    public Integer getPlacement_id() {
-        return placement_id;
+    public Double getCgpa() {
+        return cgpa;
     }
 
-    public void setPlacement_id(Integer placement_id) {
-        this.placement_id = placement_id;
+    public void setCgpa(Double cgpa) {
+        this.cgpa = cgpa;
     }
+
+    public Integer getGrad_year() {
+        return grad_year;
+    }
+
+    public void setGrad_year(Integer grad_year) {
+        this.grad_year = grad_year;
+    }
+
+
+
 }

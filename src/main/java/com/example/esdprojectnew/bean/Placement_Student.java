@@ -10,16 +10,18 @@ public class Placement_Student implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer placement_id;
 
-    @Column(nullable = false)
-    private Integer org_id;
+    @ManyToOne
+    @JoinColumn(name="org_id")
+    private Placement org_id;
 
-    @Column(nullable = false)
-    private Integer id;
+    @ManyToOne
+    @JoinColumn(name="id")
+    private Student id;
 
 
     private String acceptance;
 
-    public Placement_Student(Integer placement_id, Integer org_id, Integer id, String acceptance) {
+    public Placement_Student(Integer placement_id, Placement org_id, Student id, String acceptance) {
         this.placement_id = placement_id;
         this.org_id = org_id;
         this.id = id;
@@ -38,19 +40,19 @@ public class Placement_Student implements Serializable {
         this.placement_id = placement_id;
     }
 
-    public Integer getOrg_id() {
+    public Placement getOrg_id() {
         return org_id;
     }
 
-    public void setOrg_id(Integer org_id) {
+    public void setOrg_id(Placement org_id) {
         this.org_id = org_id;
     }
 
-    public Integer getId() {
+    public Student getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Student id) {
         this.id = id;
     }
 

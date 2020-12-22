@@ -10,8 +10,11 @@ public class Student_Courses implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer sc_id;//this is the general primary key of this table no other use
 
-    @Column(nullable = false)
-    private Integer id;//this is in relation to id in student table
+    @ManyToOne
+    @JoinColumn(name="id",nullable = false)
+    private Student id;     // FK to id in students table
+
+
 
     @Column(nullable = false)
     private String course_name;
@@ -19,7 +22,7 @@ public class Student_Courses implements Serializable {
     @Column(nullable = false)
     private Double grade;//grade for individual subject
 
-    public Student_Courses(Integer sc_id, Integer id, String course_name, Double grade) {
+    public Student_Courses(Integer sc_id, Student id, String course_name, Double grade) {
         this.sc_id = sc_id;
         this.id = id;
         this.course_name = course_name;
@@ -38,11 +41,11 @@ public class Student_Courses implements Serializable {
         this.sc_id = sc_id;
     }
 
-    public Integer getId() {
+    public Student getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Student id) {
         this.id = id;
     }
 

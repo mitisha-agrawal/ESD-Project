@@ -11,14 +11,16 @@ public class Placement_Filter implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer filter_id;
 
+    @ManyToOne
+    @JoinColumn(name="org_id")
+    private Placement org_id;
+
     @Column(nullable = false)
-    private Integer org_id;
-
-
     private String specialization;
+    @Column(nullable = false)
     private String domain;
 
-    public Placement_Filter(Integer filter_id, Integer org_id, String specialization, String domain) {
+    public Placement_Filter(Integer filter_id, Placement org_id, String specialization, String domain) {
         this.filter_id = filter_id;
         this.org_id = org_id;
         this.specialization = specialization;
@@ -37,11 +39,11 @@ public class Placement_Filter implements Serializable {
         this.filter_id = filter_id;
     }
 
-    public Integer getOrg_id() {
+    public Placement getOrg_id() {
         return org_id;
     }
 
-    public void setOrg_id(Integer org_id) {
+    public void setOrg_id(Placement org_id) {
         this.org_id = org_id;
     }
 

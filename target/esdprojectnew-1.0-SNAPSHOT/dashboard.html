@@ -23,7 +23,7 @@
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" id="org-tab" data-toggle="tab" href="org.html" role="tab" aria-controls="org_nav" aria-selected="false" onclick="org_nav.js">View Organizations</a>
+        <a class="nav-link" id="org-tab" data-toggle="tab" onclick="fetch_organization('home');" href="org.html" role="tab" aria-controls="org_nav" aria-selected="false" onclick="org_nav.js">View Organizations</a>
     </li>
     <!--        <li class="nav-item">
                 <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
@@ -36,8 +36,8 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-    <div class="tab-pane" id="org_nav" role="tabpanel" aria-labelledby="org-tab">...</div>
+    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">This is home</div>
+    <div class="tab-pane" id="org_nav" role="tabpanel" aria-labelledby="org-tab">This is organization</div>
     <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
     <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
 </div>

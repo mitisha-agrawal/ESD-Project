@@ -62,4 +62,7 @@ async function fetch_department(){
 
     let response2 = await fetch("api/employee/addEmp", {method: 'POST'});
     let response3 = await fetch("api/placement/addPlac", {method: 'POST'});
+    let response4 = await fetch("api/placementfilter/addFilter", {method: 'POST'});
+    let response5 = await fetch("api/student/addstudents", {method: 'POST'});
+    let response6 = await fetch("api/studentcourses/addCourses", {method: 'POST'});
 }
